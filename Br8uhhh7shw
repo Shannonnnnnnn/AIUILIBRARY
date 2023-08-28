@@ -1,0 +1,32 @@
+-- Define your UI library table
+local UILibrary = {}
+
+-- Create a function to create a button
+function UILibrary.CreateButton(text, parent)
+    local button = Instance.new("TextButton")
+    button.Text = text
+    button.Parent = parent
+    return button
+end
+
+-- Create a function to create a text label
+function UILibrary.CreateLabel(text, parent)
+    local label = Instance.new("TextLabel")
+    label.Text = text
+    label.Parent = parent
+    return label
+end
+
+-- Example usage
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local button = UILibrary.CreateButton("Click me!", gui)
+button.Size = UDim2.new(0, 100, 0, 50)
+button.Position = UDim2.new(0.5, -50, 0.5, -25)
+
+local label = UILibrary.CreateLabel("Hello, Roblox!", gui)
+label.Size = UDim2.new(0, 200, 0, 30)
+label.Position = UDim2.new(0.5, -100, 0.2, 0)
+label.FontSize = Enum.FontSize.Size24
+label.TextColor3 = Color3.new(1, 1, 1)
